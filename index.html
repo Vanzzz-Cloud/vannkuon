@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium personal portfolio of VANN KUON. IT Student, Web Developer, and Mobile App Learner." />
+  <meta name="keywords" content="VANN KUON, IT Student, Web Developer, Laravel, Tailwind CSS, Cambodia Developer, Portfolio" />
+  <meta name="author" content="VANN KUON" />
+  <meta name="theme-color" content="#14b8a6" />
+  <meta property="og:title" content="VANN KUON | Personal Portfolio" />
+  <meta property="og:description" content="IT Student | Web Developer | Mobile App Learner. Programming, Database, Networking, Web Development, and Mobile App Development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero-profile.jpg" />
+  <title>VANN KUON | Personal Portfolio</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314b8a6'/%3E%3Ctext x='12' y='42' font-size='28' font-family='Arial' font-weight='700' fill='white'%3EVK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "Arial", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 0 45px rgba(20, 184, 166, .26)",
+            premium: "0 24px 80px rgba(2, 6, 23, .18)",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --accent: #14b8a6;
+      --accent-2: #f59e0b;
+      --accent-3: #f43f5e;
+      --ink: #101827;
+      --paper: #f8fafc;
+      --panel: rgba(255, 255, 255, .72);
+      --panel-border: rgba(15, 23, 42, .12);
+    }
+
+    .dark {
+      --ink: #f8fafc;
+      --paper: #070a12;
+      --panel: rgba(15, 23, 42, .68);
+      --panel-border: rgba(255, 255, 255, .12);
+    }
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    .dark body {
+      background: #070a12 !important;
+      color: #f8fafc !important;
+    }
+
+    /* Dark-mode fallback for browsers/file previews when Tailwind CDN utilities are cached late. */
+    .dark #skills,
+    .dark #services,
+    .dark #featured,
+    .dark #blog,
+    .dark #contact {
+      background: rgba(255, 255, 255, .035) !important;
+    }
+
+    .dark .glass {
+      color: #f8fafc;
+    }
+
+    .dark .text-slate-950,
+    .dark .text-slate-900,
+    .dark .text-slate-800,
+    .dark .text-slate-700 {
+      color: #e5e7eb !important;
+    }
+
+    .dark .text-slate-600,
+    .dark .text-slate-500,
+    .dark .text-slate-400,
+    .dark .text-slate-300 {
+      color: #cbd5e1 !important;
+    }
+
+    .dark .bg-white\/70,
+    .dark .bg-white\/80,
+    .dark .bg-white\/95 {
+      background: rgba(15, 23, 42, .82) !important;
+    }
+
+    .dark .bg-white\/55,
+    .dark .bg-slate-100,
+    .dark .bg-slate-100\/70 {
+      background: rgba(255, 255, 255, .06) !important;
+    }
+
+    .dark input,
+    .dark textarea {
+      background: rgba(255, 255, 255, .06) !important;
+      border-color: rgba(255, 255, 255, .12) !important;
+      color: #f8fafc;
+    }
+
+    .noise-layer::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .06;
+      background-image:
+        linear-gradient(90deg, rgba(148, 163, 184, .45) 1px, transparent 1px),
+        linear-gradient(rgba(148, 163, 184, .45) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .animated-bg {
+      background:
+        linear-gradient(125deg, rgba(20, 184, 166, .18), transparent 32%),
+        linear-gradient(245deg, rgba(244, 63, 94, .14), transparent 36%),
+        linear-gradient(0deg, rgba(245, 158, 11, .1), transparent 44%);
+      background-size: 180% 180%;
+      animation: meshMove 16s ease infinite;
+    }
+
+    @keyframes meshMove {
+      0%, 100% { background-position: 0% 40%; }
+      50% { background-position: 100% 60%; }
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 70px rgba(2, 6, 23, .12);
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #06b6d4);
+      color: white;
+      box-shadow: 0 16px 36px rgba(20, 184, 166, .28);
+    }
+
+    .btn-soft {
+      border: 1px solid var(--panel-border);
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .floating {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-delayed {
+      animation: float 6.5s ease-in-out infinite;
+      animation-delay: -1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .tech-chip {
+      animation: drift 7s ease-in-out infinite;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      50% { transform: translate3d(10px, -14px, 0) rotate(3deg); }
+    }
+
+    .typing-caret::after {
+      content: "|";
+      margin-left: .25rem;
+      color: var(--accent);
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      margin-top: 4px;
+      background: var(--accent);
+      transition: width .25s ease;
+    }
+
+    .progress-fill {
+      width: 0;
+      transition: width 1.2s ease;
+    }
+
+    .timeline-line::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+
+    .project-card.hide {
+      display: none;
+    }
+
+    .lang-kh {
+      font-family: "Noto Sans Khmer", "Khmer OS", Arial, sans-serif;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="noise-layer bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-[#070a12] dark:text-slate-50">
+  <!-- Loading screen -->
+  <div id="loader" class="fixed inset-0 z-[100] grid place-items-center bg-slate-950 text-white">
+    <div class="text-center">
+      <div class="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-2xl bg-teal-500 text-2xl font-black shadow-glow">VK</div>
+      <p class="text-sm uppercase tracking-[.35em] text-slate-300">Loading Portfolio</p>
+      <div class="mt-5 h-1 w-56 overflow-hidden rounded-full bg-white/10">
+        <div class="h-full w-2/3 animate-pulse rounded-full bg-teal-400"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="scrollProgress" class="fixed left-0 top-0 z-[90] h-1 w-0 bg-gradient-to-r from-teal-400 via-amber-400 to-rose-500"></div>
+
+  <!-- Header / Navbar -->
+  <header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#home" class="group flex items-center gap-3" aria-label="VANN KUON home">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 font-black text-white shadow-glow">VK</span>
+        <span>
+          <span class="block text-base font-black tracking-wide">VANN KUON</span>
+          <span class="block text-xs text-slate-500 dark:text-slate-400">IT Student / Developer</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-5 xl:flex">
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#home" data-i18n="navHome">Home</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#about" data-i18n="navAbout">About</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#skills" data-i18n="navSkills">Skills</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#projects" data-i18n="navProjects">Projects</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#services" data-i18n="navServices">Services</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#experience" data-i18n="navExperience">Experience</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#blog" data-i18n="navBlog">Blog</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#testimonials" data-i18n="navTestimonials">Testimonials</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#faq" data-i18n="navFaq">FAQ</a>
+        <a class="nav-link text-sm font-semibold text-slate-700 transition dark:text-slate-200" href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/70 p-1 dark:border-white/10 dark:bg-white/10 sm:flex" aria-label="Theme color switcher">
+          <button class="color-dot h-7 w-7 rounded-full bg-teal-500 ring-2 ring-transparent transition hover:ring-teal-300" data-color="#14b8a6" data-color2="#f59e0b" data-color3="#f43f5e" aria-label="Teal theme"></button>
+          <button class="color-dot h-7 w-7 rounded-full bg-violet-500 ring-2 ring-transparent transition hover:ring-violet-300" data-color="#8b5cf6" data-color2="#22c55e" data-color3="#f97316" aria-label="Violet theme"></button>
+          <button class="color-dot h-7 w-7 rounded-full bg-rose-500 ring-2 ring-transparent transition hover:ring-rose-300" data-color="#e11d48" data-color2="#06b6d4" data-color3="#84cc16" aria-label="Rose theme"></button>
+        </div>
+        <button id="langToggle" class="rounded-full border border-slate-200 bg-white/70 px-3 py-2 text-xs font-bold transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/10" aria-label="Switch language">ខ្មែរ</button>
+        <button id="themeToggle" class="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/70 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/10" aria-label="Toggle dark and light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="menuToggle" class="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/70 transition dark:border-white/10 dark:bg-white/10 xl:hidden" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="mx-4 hidden rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-premium backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95 xl:hidden">
+      <div class="grid gap-3 text-sm font-bold">
+        <a class="mobile-link" href="#home" data-i18n="navHome">Home</a>
+        <a class="mobile-link" href="#about" data-i18n="navAbout">About</a>
+        <a class="mobile-link" href="#skills" data-i18n="navSkills">Skills</a>
+        <a class="mobile-link" href="#projects" data-i18n="navProjects">Projects</a>
+        <a class="mobile-link" href="#services" data-i18n="navServices">Services</a>
+        <a class="mobile-link" href="#experience" data-i18n="navExperience">Experience</a>
+        <a class="mobile-link" href="#blog" data-i18n="navBlog">Blog</a>
+        <a class="mobile-link" href="#testimonials" data-i18n="navTestimonials">Testimonials</a>
+        <a class="mobile-link" href="#faq" data-i18n="navFaq">FAQ</a>
+        <a class="mobile-link" href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section id="home" class="animated-bg relative flex min-h-screen items-center overflow-hidden px-4 pt-28 sm:px-6 lg:px-8">
+      <div class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_.92fr]">
+        <div class="reveal">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-500/25 bg-teal-500/10 px-4 py-2 text-sm font-bold text-teal-700 dark:text-teal-200">
+            <span class="h-2 w-2 rounded-full bg-teal-400"></span>
+            <span data-i18n="heroBadge">Available for practice projects and freelance work</span>
+          </div>
+
+          <h1 class="section-title max-w-4xl font-black">
+            <span data-i18n="heroHello">Hi, I am</span>
+            <span class="gradient-text block">VANN KUON</span>
+          </h1>
+          <p class="mt-4 text-xl font-bold text-slate-700 dark:text-slate-200 sm:text-2xl">IT Student | Web Developer | Mobile App Learner</p>
+          <p class="mt-4 min-h-8 text-lg font-semibold text-teal-600 dark:text-teal-300">
+            <span id="typingText" class="typing-caret"></span>
+          </p>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg" data-i18n="heroIntro">
+            Passionate about Programming, Database, Networking, Web Development, and Mobile App Development.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary rounded-full px-6 py-3 font-bold transition hover:-translate-y-1" data-i18n="hireMe">Hire Me</a>
+            <a href="#projects" class="btn-soft rounded-full px-6 py-3 font-bold transition hover:-translate-y-1" data-i18n="viewProjects">View Projects</a>
+            <a href="VANN_KUON_CV.html" download="VANN_KUON_CV.html" class="rounded-full border border-slate-300 px-6 py-3 font-bold transition hover:-translate-y-1 hover:border-teal-400 dark:border-white/15" data-i18n="downloadCv">
+              Download CV
+            </a>
+          </div>
+
+          <div class="mt-9 flex items-center gap-4">
+            <a href="https://github.com/" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white/70 text-lg transition hover:-translate-y-1 hover:text-teal-500 dark:border-white/10 dark:bg-white/10" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com/" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white/70 text-lg transition hover:-translate-y-1 hover:text-blue-500 dark:border-white/10 dark:bg-white/10" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://t.me/" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white/70 text-lg transition hover:-translate-y-1 hover:text-sky-500 dark:border-white/10 dark:bg-white/10" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://linkedin.com/" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white/70 text-lg transition hover:-translate-y-1 hover:text-blue-600 dark:border-white/10 dark:bg-white/10" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-lg reveal">
+          <div class="absolute -left-2 top-12 tech-chip rounded-2xl border border-orange-300/30 bg-white/80 px-4 py-3 text-orange-500 shadow-premium dark:bg-slate-900/80"><i class="fa-brands fa-html5 mr-2"></i>HTML</div>
+          <div class="absolute -right-3 top-28 tech-chip rounded-2xl border border-sky-300/30 bg-white/80 px-4 py-3 text-sky-500 shadow-premium dark:bg-slate-900/80" style="animation-delay: -2s"><i class="fa-brands fa-css3-alt mr-2"></i>CSS</div>
+          <div class="absolute bottom-24 -left-3 tech-chip rounded-2xl border border-amber-300/30 bg-white/80 px-4 py-3 text-amber-500 shadow-premium dark:bg-slate-900/80" style="animation-delay: -3s"><i class="fa-brands fa-js mr-2"></i>JS</div>
+          <div class="absolute bottom-8 right-2 tech-chip rounded-2xl border border-red-300/30 bg-white/80 px-4 py-3 text-red-500 shadow-premium dark:bg-slate-900/80" style="animation-delay: -1s"><i class="fa-brands fa-laravel mr-2"></i>Laravel</div>
+
+          <div class="floating relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem] border border-white/20 bg-slate-950 p-4 shadow-glow">
+            <div class="h-full rounded-[1.5rem] bg-[linear-gradient(145deg,#111827,#0f766e_48%,#f97316)] p-5 text-white">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <div class="mt-12 grid place-items-center text-center">
+                <div class="h-32 w-32 overflow-hidden rounded-full border border-white/30 bg-white/15 p-1 backdrop-blur">
+                  <img src="hero-profile.jpg" alt="Profile photo of VANN KUON" class="h-full w-full rounded-full object-cover object-[72%_center]" loading="eager" decoding="async" />
+                </div>
+                <h2 class="mt-6 text-3xl font-black">VANN KUON</h2>
+                <p class="mt-2 text-sm text-white/80">Developer Profile</p>
+                <div class="mt-5 w-full rounded-2xl bg-white/12 p-4 text-left font-mono text-[11px] leading-5">
+                  <p><span class="text-teal-200">const</span> developer = {</p>
+                  <p class="pl-4">name: "VANN KUON",</p>
+                  <p class="pl-4">focus: "Web + Database",</p>
+                  <p class="pl-4">mindset: "Learn & Build"</p>
+                  <p>};</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounce text-sm font-bold text-slate-500 dark:text-slate-300 md:block" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="aboutEyebrow">About Me</p>
+          <h2 class="section-title font-black" data-i18n="aboutTitle">Building skills through real projects.</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300" data-i18n="aboutIntro">
+            I am an IT student learning programming, database systems, networking, web development, and mobile app concepts. ខ្ញុំចូលចិត្តបង្កើត UI/UX ទំនើប និង website ដែលស្អាត ប្រើងាយ និង responsive។
+          </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="glass reveal rounded-3xl p-6">
+            <h3 class="text-2xl font-black" data-i18n="journeyTitle">Developer Journey</h3>
+            <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300" data-i18n="journeyText">
+              My journey started with curiosity about how websites work. Now I practice frontend, backend, database design, networking fundamentals, and mobile UI ideas to become a confident software developer.
+            </p>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl bg-white/55 p-4 dark:bg-white/5">
+                <i class="fa-solid fa-graduation-cap text-2xl text-teal-500"></i>
+                <h4 class="mt-3 font-black" data-i18n="education">Education</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">IT Student</p>
+              </div>
+              <div class="rounded-2xl bg-white/55 p-4 dark:bg-white/5">
+                <i class="fa-solid fa-bullseye text-2xl text-amber-500"></i>
+                <h4 class="mt-3 font-black" data-i18n="goals">Goals</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Full-stack developer</p>
+              </div>
+              <div class="rounded-2xl bg-white/55 p-4 dark:bg-white/5">
+                <i class="fa-solid fa-heart text-2xl text-rose-500"></i>
+                <h4 class="mt-3 font-black" data-i18n="interests">Interests</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Web, Apps, Software</p>
+              </div>
+              <div class="rounded-2xl bg-white/55 p-4 dark:bg-white/5">
+                <i class="fa-solid fa-palette text-2xl text-cyan-500"></i>
+                <h4 class="mt-3 font-black">UI/UX</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Modern design systems</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="glass reveal rounded-3xl p-6">
+              <p class="text-sm font-bold text-slate-500 dark:text-slate-400">Name</p>
+              <h3 class="mt-2 text-2xl font-black">VANN KUON</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Personal portfolio for learning, coding, and project building.</p>
+            </div>
+            <div class="glass reveal rounded-3xl p-6">
+              <p class="text-sm font-bold text-slate-500 dark:text-slate-400">Focus</p>
+              <h3 class="mt-2 text-2xl font-black">Frontend + Backend</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">HTML, CSS, Tailwind, JavaScript, PHP, Laravel, and MySQL.</p>
+            </div>
+            <div class="glass reveal rounded-3xl p-6 sm:col-span-2">
+              <div class="grid gap-4 sm:grid-cols-3">
+                <div>
+                  <p class="text-4xl font-black text-teal-500"><span class="counter" data-target="2">0</span>+</p>
+                  <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400">Years Learning</p>
+                </div>
+                <div>
+                  <p class="text-4xl font-black text-amber-500"><span class="counter" data-target="18">0</span>+</p>
+                  <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400">Practice Projects</p>
+                </div>
+                <div>
+                  <p class="text-4xl font-black text-rose-500"><span class="counter" data-target="12">0</span>+</p>
+                  <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400">Certificates / Goals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="px-4 pb-24 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <article class="glass reveal rounded-3xl p-6 text-center">
+          <i class="fa-solid fa-diagram-project text-3xl text-teal-500"></i>
+          <p class="mt-4 text-4xl font-black"><span class="counter" data-target="18">0</span>+</p>
+          <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400" data-i18n="statProjects">Projects Completed</p>
+        </article>
+        <article class="glass reveal rounded-3xl p-6 text-center">
+          <i class="fa-solid fa-layer-group text-3xl text-amber-500"></i>
+          <p class="mt-4 text-4xl font-black"><span class="counter" data-target="11">0</span>+</p>
+          <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400" data-i18n="statTech">Technologies Learned</p>
+        </article>
+        <article class="glass reveal rounded-3xl p-6 text-center">
+          <i class="fa-solid fa-clock text-3xl text-rose-500"></i>
+          <p class="mt-4 text-4xl font-black"><span class="counter" data-target="950">0</span>+</p>
+          <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400" data-i18n="statHours">Practice Hours</p>
+        </article>
+        <article class="glass reveal rounded-3xl p-6 text-center">
+          <i class="fa-solid fa-face-smile text-3xl text-cyan-500"></i>
+          <p class="mt-4 text-4xl font-black"><span class="counter" data-target="8">0</span>+</p>
+          <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400" data-i18n="statClients">Happy Clients</p>
+        </article>
+        <article class="glass reveal rounded-3xl p-6 text-center">
+          <i class="fa-solid fa-users text-3xl text-lime-500"></i>
+          <p class="mt-4 text-4xl font-black"><span class="counter" data-target="14">0</span>+</p>
+          <p class="mt-1 text-sm font-bold text-slate-500 dark:text-slate-400" data-i18n="statTeams">Team Collaborations</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-slate-100/70 px-4 py-24 dark:bg-white/[.03] sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-3xl reveal">
+            <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="skillsEyebrow">Skills</p>
+            <h2 class="section-title font-black" data-i18n="skillsTitle">Tools I use to build clean digital products.</h2>
+          </div>
+          <div class="flex flex-wrap gap-2 reveal" role="tablist" aria-label="Skill filters">
+            <button class="skill-filter rounded-full bg-teal-500 px-4 py-2 text-sm font-bold text-white" data-skill-filter="all">All</button>
+            <button class="skill-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-skill-filter="frontend">Frontend</button>
+            <button class="skill-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-skill-filter="backend">Backend</button>
+            <button class="skill-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-skill-filter="other">Other</button>
+          </div>
+        </div>
+
+        <div id="skillGrid" class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="frontend" data-percent="92">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-html5 mr-2 text-orange-500"></i>HTML</h3><span class="font-black">92%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-orange-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="frontend" data-percent="88">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-css3-alt mr-2 text-sky-500"></i>CSS</h3><span class="font-black">88%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-sky-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="frontend" data-percent="85">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-solid fa-wind mr-2 text-teal-500"></i>Tailwind CSS</h3><span class="font-black">85%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-teal-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="frontend" data-percent="78">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-js mr-2 text-amber-500"></i>JavaScript</h3><span class="font-black">78%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-amber-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="backend" data-percent="72">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-php mr-2 text-indigo-500"></i>PHP</h3><span class="font-black">72%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-indigo-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="backend" data-percent="68">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-laravel mr-2 text-red-500"></i>Laravel</h3><span class="font-black">68%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-red-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="backend" data-percent="74">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-solid fa-database mr-2 text-cyan-500"></i>MySQL</h3><span class="font-black">74%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-cyan-500"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="other" data-percent="80">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-brands fa-github mr-2"></i>Git/GitHub</h3><span class="font-black">80%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-slate-700 dark:bg-slate-200"></div></div>
+          </div>
+          <div class="skill-card glass reveal rounded-3xl p-6" data-category="other" data-percent="76">
+            <div class="flex items-center justify-between"><h3 class="font-black"><i class="fa-solid fa-network-wired mr-2 text-lime-500"></i>Networking</h3><span class="font-black">76%</span></div>
+            <div class="mt-4 h-3 rounded-full bg-slate-200 dark:bg-white/10"><div class="progress-fill h-full rounded-full bg-lime-500"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-3xl reveal">
+            <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="projectsEyebrow">Projects</p>
+            <h2 class="section-title font-black" data-i18n="projectsTitle">A practical showcase of learning by building.</h2>
+          </div>
+          <div class="flex flex-wrap gap-2 reveal" aria-label="Project filters">
+            <button class="project-filter rounded-full bg-teal-500 px-4 py-2 text-sm font-bold text-white" data-filter="all">All</button>
+            <button class="project-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-filter="web">Web</button>
+            <button class="project-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-filter="system">System</button>
+            <button class="project-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15" data-filter="mobile">Mobile UI</button>
+          </div>
+        </div>
+
+        <div class="mb-8 grid gap-4 sm:grid-cols-3 reveal">
+          <div class="rounded-3xl bg-slate-100 p-5 dark:bg-white/5"><span class="text-3xl font-black text-teal-500">6</span><p class="text-sm font-bold text-slate-500 dark:text-slate-400">Showcase Projects</p></div>
+          <div class="rounded-3xl bg-slate-100 p-5 dark:bg-white/5"><span class="text-3xl font-black text-amber-500">4</span><p class="text-sm font-bold text-slate-500 dark:text-slate-400">Main Categories</p></div>
+          <div class="rounded-3xl bg-slate-100 p-5 dark:bg-white/5"><span class="text-3xl font-black text-rose-500">20+</span><p class="text-sm font-bold text-slate-500 dark:text-slate-400">Features Practiced</p></div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="web" data-project="Portfolio Website">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-teal-500 via-cyan-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Portfolio Website preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 420 C220 320 360 510 900 280 L900 520 L0 520Z' fill='%2314b8a6' opacity='.75'/%3E%3Ccircle cx='735' cy='120' r='90' fill='%23f59e0b' opacity='.35'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-id-card relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-600">HTML</span><span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600">Tailwind</span><span class="rounded-full bg-rose-500/10 px-3 py-1 text-xs font-bold text-rose-600">JS</span></div>
+              <h3 class="text-xl font-black">Portfolio Website</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Modern personal portfolio with dark mode, animations, filtering, and contact form.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="system" data-project="Student Management System">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-indigo-500 via-sky-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Student Management System preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 120 C260 240 520 30 900 180 L900 520 L0 520Z' fill='%230ea5e9' opacity='.72'/%3E%3Crect x='120' y='95' width='260' height='46' rx='14' fill='white' opacity='.3'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-user-graduate relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-600">PHP</span><span class="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600">MySQL</span></div>
+              <h3 class="text-xl font-black">Student Management System</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">CRUD system for students, classes, scores, attendance, and reports.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="web" data-project="Online Shop Website">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Online Shop Website preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 330 C220 170 560 470 900 210 L900 520 L0 520Z' fill='%23f97316' opacity='.76'/%3E%3Crect x='520' y='92' width='190' height='150' rx='24' fill='white' opacity='.22'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-bag-shopping relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-orange-500/10 px-3 py-1 text-xs font-bold text-orange-600">Laravel</span><span class="rounded-full bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-600">MySQL</span></div>
+              <h3 class="text-xl font-black">Online Shop Website</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Shop layout with product cards, cart flow, checkout concept, and admin dashboard.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="mobile" data-project="Mobile App UI Design">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-rose-500 via-pink-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Mobile App UI Design preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 190 C280 60 420 430 900 150 L900 520 L0 520Z' fill='%23f43f5e' opacity='.76'/%3E%3Crect x='365' y='72' width='170' height='300' rx='34' fill='white' opacity='.22'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-mobile-screen-button relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-rose-500/10 px-3 py-1 text-xs font-bold text-rose-600">UI/UX</span><span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-bold text-sky-600">Prototype</span></div>
+              <h3 class="text-xl font-black">Mobile App UI Design</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Clean screens for login, dashboard, profile, settings, and mobile workflows.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="system" data-project="Restaurant Ordering System">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-lime-500 via-emerald-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Restaurant Ordering System preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 390 C210 260 500 430 900 250 L900 520 L0 520Z' fill='%2322c55e' opacity='.76'/%3E%3Ccircle cx='230' cy='150' r='70' fill='white' opacity='.24'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-utensils relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-red-500/10 px-3 py-1 text-xs font-bold text-red-600">Laravel</span><span class="rounded-full bg-lime-500/10 px-3 py-1 text-xs font-bold text-lime-600">POS</span></div>
+              <h3 class="text-xl font-black">Restaurant Ordering System</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Menu management, table orders, kitchen status, and simple payment workflow.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal group overflow-hidden rounded-3xl" data-category="system" data-project="Inventory Management System">
+            <div class="relative grid h-52 place-items-center overflow-hidden bg-gradient-to-br from-cyan-500 via-blue-500 to-slate-950 text-white">
+              <img loading="lazy" decoding="async" alt="Inventory Management System preview placeholder" class="absolute inset-0 h-full w-full object-cover opacity-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520'%3E%3Crect width='900' height='520' fill='%230f172a'/%3E%3Cpath d='M0 240 C280 100 520 360 900 160 L900 520 L0 520Z' fill='%2306b6d4' opacity='.76'/%3E%3Crect x='590' y='145' width='170' height='120' rx='18' fill='white' opacity='.24'/%3E%3C/svg%3E" />
+              <i class="fa-solid fa-boxes-stacked relative z-10 text-6xl transition group-hover:scale-110"></i>
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex flex-wrap gap-2"><span class="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-600">PHP</span><span class="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600">Database</span></div>
+              <h3 class="text-xl font-black">Inventory Management System</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Stock tracking, product records, supplier data, and dashboard reports.</p>
+              <button class="open-project mt-5 font-bold text-teal-500">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-slate-100/70 px-4 py-24 dark:bg-white/[.03] sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="servicesEyebrow">Services</p>
+          <h2 class="section-title font-black" data-i18n="servicesTitle">Helpful digital services for students and small businesses.</h2>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-pen-nib text-3xl text-teal-500"></i><h3 class="mt-5 font-black">Web Design</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Clean visual layouts with modern UX thinking.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-code text-3xl text-amber-500"></i><h3 class="mt-5 font-black">Website Development</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Responsive websites using HTML, CSS, Tailwind, and JS.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-database text-3xl text-cyan-500"></i><h3 class="mt-5 font-black">Database Design</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Structured database planning with MySQL basics.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-bezier-curve text-3xl text-rose-500"></i><h3 class="mt-5 font-black">UI/UX Design</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">User-friendly screens, flows, colors, and components.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-mobile-screen text-3xl text-violet-500"></i><h3 class="mt-5 font-black">Mobile App UI</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Mobile-first layouts for app concepts and prototypes.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-brands fa-laravel text-3xl text-red-500"></i><h3 class="mt-5 font-black">Laravel Development</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Beginner-friendly Laravel features and CRUD systems.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-laptop-code text-3xl text-lime-500"></i><h3 class="mt-5 font-black">Responsive Website</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Sites that work nicely on phone, tablet, and desktop.</p></div>
+          <div class="glass reveal rounded-3xl p-6 transition hover:-translate-y-2"><i class="fa-solid fa-briefcase text-3xl text-orange-500"></i><h3 class="mt-5 font-black">Business Website</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Simple company pages, service pages, and contact forms.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="experienceEyebrow">Experience & Education</p>
+          <h2 class="section-title font-black" data-i18n="experienceTitle">A timeline of learning, practice, and growth.</h2>
+        </div>
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr]">
+          <div class="timeline-line relative grid gap-6 pl-12">
+            <div class="glass reveal relative rounded-3xl p-6 before:absolute before:-left-[2.65rem] before:top-7 before:h-5 before:w-5 before:rounded-full before:bg-teal-500 before:ring-4 before:ring-teal-500/20">
+              <span class="text-sm font-black text-teal-500">2024 - Present</span>
+              <h3 class="mt-2 text-xl font-black">IT Student</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Studying computer fundamentals, programming logic, database, and networking.</p>
+            </div>
+            <div class="glass reveal relative rounded-3xl p-6 before:absolute before:-left-[2.65rem] before:top-7 before:h-5 before:w-5 before:rounded-full before:bg-amber-500 before:ring-4 before:ring-amber-500/20">
+              <span class="text-sm font-black text-amber-500">Learning Journey</span>
+              <h3 class="mt-2 text-xl font-black">Programming Practice</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Building logic with JavaScript, PHP, and Laravel fundamentals.</p>
+            </div>
+            <div class="glass reveal relative rounded-3xl p-6 before:absolute before:-left-[2.65rem] before:top-7 before:h-5 before:w-5 before:rounded-full before:bg-rose-500 before:ring-4 before:ring-rose-500/20">
+              <span class="text-sm font-black text-rose-500">Database + Network</span>
+              <h3 class="mt-2 text-xl font-black">Database and Networking</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Practicing MySQL structure, relationships, queries, IP concepts, and network basics.</p>
+            </div>
+            <div class="glass reveal relative rounded-3xl p-6 before:absolute before:-left-[2.65rem] before:top-7 before:h-5 before:w-5 before:rounded-full before:bg-cyan-500 before:ring-4 before:ring-cyan-500/20">
+              <span class="text-sm font-black text-cyan-500">Projects</span>
+              <h3 class="mt-2 text-xl font-black">Personal Projects & Freelance Practice</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Creating portfolio pages, management systems, UI concepts, and business website layouts.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-6">
+            <div class="glass reveal rounded-3xl p-6">
+              <h3 class="text-xl font-black">Achievement Cards</h3>
+              <div class="mt-5 grid gap-4">
+                <div class="flex items-center gap-4 rounded-2xl bg-white/55 p-4 dark:bg-white/5"><i class="fa-solid fa-award text-2xl text-amber-500"></i><span class="font-bold">Responsive Web Design Practice</span></div>
+                <div class="flex items-center gap-4 rounded-2xl bg-white/55 p-4 dark:bg-white/5"><i class="fa-solid fa-medal text-2xl text-teal-500"></i><span class="font-bold">Database CRUD Project</span></div>
+                <div class="flex items-center gap-4 rounded-2xl bg-white/55 p-4 dark:bg-white/5"><i class="fa-solid fa-certificate text-2xl text-rose-500"></i><span class="font-bold">Laravel Beginner Roadmap</span></div>
+              </div>
+            </div>
+            <div class="glass reveal rounded-3xl p-6">
+              <h3 class="text-xl font-black">Certificate Placeholders</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Add real certificates here later: short courses, school achievements, online classes, and project awards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section id="featured" class="bg-slate-100/70 px-4 py-24 dark:bg-white/[.03] sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="reveal overflow-hidden rounded-[2rem] bg-slate-950 p-4 shadow-glow">
+          <div class="rounded-[1.5rem] bg-gradient-to-br from-teal-500 via-slate-900 to-amber-500 p-6 text-white">
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2"><span class="h-3 w-3 rounded-full bg-rose-400"></span><span class="h-3 w-3 rounded-full bg-amber-400"></span><span class="h-3 w-3 rounded-full bg-emerald-400"></span></div>
+              <span class="text-xs font-bold text-white/70">Featured Dashboard</span>
+            </div>
+            <div class="mt-12 grid gap-4 md:grid-cols-3">
+              <div class="rounded-2xl bg-white/15 p-5 backdrop-blur"><p class="text-3xl font-black">128</p><p class="text-sm text-white/75">Students</p></div>
+              <div class="rounded-2xl bg-white/15 p-5 backdrop-blur"><p class="text-3xl font-black">24</p><p class="text-sm text-white/75">Classes</p></div>
+              <div class="rounded-2xl bg-white/15 p-5 backdrop-blur"><p class="text-3xl font-black">9</p><p class="text-sm text-white/75">Reports</p></div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-white/15 p-5 backdrop-blur">
+              <div class="mb-4 h-3 w-2/3 rounded-full bg-white/40"></div>
+              <div class="grid gap-3">
+                <div class="h-11 rounded-xl bg-white/20"></div>
+                <div class="h-11 rounded-xl bg-white/15"></div>
+                <div class="h-11 rounded-xl bg-white/10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="featuredEyebrow">Featured Project</p>
+          <h2 class="section-title font-black">Student Management System</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">A premium learning project focused on records, classes, scores, attendance, reporting, and admin workflows. It practices database relationships, CRUD logic, and clean dashboard design.</p>
+          <ul class="mt-6 grid gap-3 text-sm font-bold text-slate-700 dark:text-slate-200">
+            <li><i class="fa-solid fa-check mr-2 text-teal-500"></i>Student, teacher, and class records</li>
+            <li><i class="fa-solid fa-check mr-2 text-teal-500"></i>Attendance and score management</li>
+            <li><i class="fa-solid fa-check mr-2 text-teal-500"></i>Dashboard statistics and reports</li>
+            <li><i class="fa-solid fa-check mr-2 text-teal-500"></i>Responsive admin interface</li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-600">PHP</span><span class="rounded-full bg-red-500/10 px-3 py-1 text-xs font-bold text-red-600">Laravel</span><span class="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600">MySQL</span><span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600">Tailwind</span></div>
+          <div class="mt-8 flex flex-wrap gap-4"><a href="#" class="btn-primary rounded-full px-6 py-3 font-bold">Live Demo</a><a href="#" class="btn-soft rounded-full px-6 py-3 font-bold"><i class="fa-brands fa-github mr-2"></i>Source Code</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="testimonialsEyebrow">Testimonials</p>
+          <h2 class="section-title font-black" data-i18n="testimonialsTitle">Kind words from practice collaborators.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="glass reveal rounded-3xl p-6">
+            <div class="flex items-center gap-4"><div class="grid h-14 w-14 place-items-center rounded-full bg-teal-500 font-black text-white">SR</div><div><h3 class="font-black">Sok Ratha</h3><p class="text-sm text-slate-500">Classmate</p></div></div>
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">Vann explains ideas clearly and designs interfaces that feel modern and easy to use.</p>
+            <div class="mt-4 text-amber-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </article>
+          <article class="glass reveal rounded-3xl p-6">
+            <div class="flex items-center gap-4"><div class="grid h-14 w-14 place-items-center rounded-full bg-amber-500 font-black text-white">ML</div><div><h3 class="font-black">Mony Leak</h3><p class="text-sm text-slate-500">Project Partner</p></div></div>
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">Good attention to responsive design and project structure. The website looked premium.</p>
+            <div class="mt-4 text-amber-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+          </article>
+          <article class="glass reveal rounded-3xl p-6">
+            <div class="flex items-center gap-4"><div class="grid h-14 w-14 place-items-center rounded-full bg-rose-500 font-black text-white">KN</div><div><h3 class="font-black">Kanha N.</h3><p class="text-sm text-slate-500">Small Business Owner</p></div></div>
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">Friendly communication and clean web design. ខ្ញុំពេញចិត្ត layout និង color style។</p>
+            <div class="mt-4 text-amber-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="bg-slate-100/70 px-4 py-24 dark:bg-white/[.03] sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="blogEyebrow">Blog</p>
+          <h2 class="section-title font-black" data-i18n="blogTitle">Notes from the learning desk.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          <article class="glass reveal overflow-hidden rounded-3xl"><div class="grid h-36 place-items-center bg-gradient-to-br from-teal-500 to-slate-950 text-white"><i class="fa-solid fa-code text-4xl"></i></div><div class="p-5"><p class="text-xs font-bold text-teal-500">May 22, 2026 | Programming</p><h3 class="mt-2 font-black">Learning Programming</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">How consistent practice builds coding confidence.</p><a href="#" class="mt-4 inline-block font-bold text-teal-500">Read More</a></div></article>
+          <article class="glass reveal overflow-hidden rounded-3xl"><div class="grid h-36 place-items-center bg-gradient-to-br from-cyan-500 to-slate-950 text-white"><i class="fa-solid fa-database text-4xl"></i></div><div class="p-5"><p class="text-xs font-bold text-cyan-500">May 22, 2026 | Database</p><h3 class="mt-2 font-black">Introduction to Database</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Tables, keys, relationships, and useful queries.</p><a href="#" class="mt-4 inline-block font-bold text-teal-500">Read More</a></div></article>
+          <article class="glass reveal overflow-hidden rounded-3xl"><div class="grid h-36 place-items-center bg-gradient-to-br from-lime-500 to-slate-950 text-white"><i class="fa-solid fa-network-wired text-4xl"></i></div><div class="p-5"><p class="text-xs font-bold text-lime-500">May 22, 2026 | Network</p><h3 class="mt-2 font-black">Networking Basics</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">IP addresses, routers, DNS, and network thinking.</p><a href="#" class="mt-4 inline-block font-bold text-teal-500">Read More</a></div></article>
+          <article class="glass reveal overflow-hidden rounded-3xl"><div class="grid h-36 place-items-center bg-gradient-to-br from-red-500 to-slate-950 text-white"><i class="fa-brands fa-laravel text-4xl"></i></div><div class="p-5"><p class="text-xs font-bold text-red-500">May 22, 2026 | Laravel</p><h3 class="mt-2 font-black">Laravel Beginner Guide</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Routes, controllers, models, and Blade basics.</p><a href="#" class="mt-4 inline-block font-bold text-teal-500">Read More</a></div></article>
+          <article class="glass reveal overflow-hidden rounded-3xl"><div class="grid h-36 place-items-center bg-gradient-to-br from-rose-500 to-slate-950 text-white"><i class="fa-solid fa-wand-magic-sparkles text-4xl"></i></div><div class="p-5"><p class="text-xs font-bold text-rose-500">May 22, 2026 | Design</p><h3 class="mt-2 font-black">Web Design Trends</h3><p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Glass, gradients, spacing, and accessible UI.</p><a href="#" class="mt-4 inline-block font-bold text-teal-500">Read More</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-12 text-center reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500">FAQ</p>
+          <h2 class="section-title font-black" data-i18n="faqTitle">Frequently asked questions.</h2>
+        </div>
+        <div class="grid gap-4">
+          <div class="faq-item glass reveal rounded-2xl p-5"><button class="faq-question flex w-full items-center justify-between gap-4 text-left font-black">What technologies do you use?<i class="fa-solid fa-plus"></i></button><div class="faq-answer hidden pt-4 text-slate-600 dark:text-slate-300">HTML, CSS, Tailwind CSS, JavaScript, PHP, Laravel, MySQL, Git/GitHub, database, networking, and UI/UX design.</div></div>
+          <div class="faq-item glass reveal rounded-2xl p-5"><button class="faq-question flex w-full items-center justify-between gap-4 text-left font-black">Are you available for freelance work?<i class="fa-solid fa-plus"></i></button><div class="faq-answer hidden pt-4 text-slate-600 dark:text-slate-300">Yes, I am available for small websites, UI design practice, business pages, and learning-based projects.</div></div>
+          <div class="faq-item glass reveal rounded-2xl p-5"><button class="faq-question flex w-full items-center justify-between gap-4 text-left font-black">Can you build responsive websites?<i class="fa-solid fa-plus"></i></button><div class="faq-answer hidden pt-4 text-slate-600 dark:text-slate-300">Yes. I build layouts that adapt to mobile, tablet, laptop, and desktop screens.</div></div>
+          <div class="faq-item glass reveal rounded-2xl p-5"><button class="faq-question flex w-full items-center justify-between gap-4 text-left font-black">Do you create UI/UX designs?<i class="fa-solid fa-plus"></i></button><div class="faq-answer hidden pt-4 text-slate-600 dark:text-slate-300">Yes. I enjoy clean interface design, modern colors, spacing, components, and user-friendly flows.</div></div>
+          <div class="faq-item glass reveal rounded-2xl p-5"><button class="faq-question flex w-full items-center justify-between gap-4 text-left font-black">What backend technologies do you use?<i class="fa-solid fa-plus"></i></button><div class="faq-answer hidden pt-4 text-slate-600 dark:text-slate-300">I practice PHP, Laravel, and MySQL for backend projects and database-driven systems.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-slate-100/70 px-4 py-24 dark:bg-white/[.03] sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 max-w-3xl reveal">
+          <p class="mb-3 text-sm font-black uppercase tracking-[.25em] text-teal-500" data-i18n="contactEyebrow">Contact</p>
+          <h2 class="section-title font-black" data-i18n="contactTitle">Let us build something useful.</h2>
+          <p class="mt-5 text-lg text-slate-600 dark:text-slate-300">មាន project idea? Send a message and start a friendly conversation.</p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+          <div class="grid gap-5">
+            <div class="glass reveal rounded-3xl p-6"><i class="fa-solid fa-envelope text-2xl text-teal-500"></i><h3 class="mt-3 font-black">Email</h3><p class="mt-1 text-slate-600 dark:text-slate-300">vannkuon@example.com</p></div>
+            <div class="glass reveal rounded-3xl p-6"><i class="fa-solid fa-location-dot text-2xl text-amber-500"></i><h3 class="mt-3 font-black">Location</h3><p class="mt-1 text-slate-600 dark:text-slate-300">Cambodia</p></div>
+            <div class="glass reveal rounded-3xl p-6"><i class="fa-brands fa-telegram text-2xl text-sky-500"></i><h3 class="mt-3 font-black">Telegram</h3><p class="mt-1 text-slate-600 dark:text-slate-300">@vannkuon</p></div>
+            <div class="glass reveal grid h-48 place-items-center rounded-3xl p-6 text-center">
+              <div>
+                <i class="fa-solid fa-map-location-dot text-4xl text-rose-500"></i>
+                <p class="mt-3 font-black">Map Placeholder</p>
+                <p class="text-sm text-slate-500">Add Google Map embed here later</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm" class="glass reveal rounded-3xl p-6 sm:p-8" novalidate>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold">Name</span>
+                <input id="name" name="name" type="text" class="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 outline-none transition focus:border-teal-400 dark:border-white/10 dark:bg-white/5" placeholder="Your name" />
+                <small class="error mt-1 hidden text-rose-500"></small>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold">Email</span>
+                <input id="email" name="email" type="email" class="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 outline-none transition focus:border-teal-400 dark:border-white/10 dark:bg-white/5" placeholder="you@example.com" />
+                <small class="error mt-1 hidden text-rose-500"></small>
+              </label>
+            </div>
+            <label class="mt-5 block">
+              <span class="mb-2 block text-sm font-bold">Subject</span>
+              <input id="subject" name="subject" type="text" class="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 outline-none transition focus:border-teal-400 dark:border-white/10 dark:bg-white/5" placeholder="Project subject" />
+              <small class="error mt-1 hidden text-rose-500"></small>
+            </label>
+            <label class="mt-5 block">
+              <span class="mb-2 block text-sm font-bold">Message</span>
+              <textarea id="message" name="message" rows="6" class="w-full resize-none rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 outline-none transition focus:border-teal-400 dark:border-white/10 dark:bg-white/5" placeholder="Tell me about your idea..."></textarea>
+              <small class="error mt-1 hidden text-rose-500"></small>
+            </label>
+            <button class="btn-primary mt-6 w-full rounded-full px-6 py-4 font-black transition hover:-translate-y-1" type="submit">
+              <i class="fa-solid fa-paper-plane mr-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 bg-slate-950 px-4 py-14 text-white sm:px-6 lg:px-8">
+    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-xl bg-teal-500 font-black">VK</span><span class="font-black">VANN KUON</span></div>
+        <p class="mt-4 max-w-md leading-7 text-slate-300">IT Student, Web Developer, and Mobile App Learner. Creating modern websites, database projects, and UI/UX designs. សូមអរគុណដែលបានមកទស្សនា portfolio របស់ខ្ញុំ។</p>
+        <div class="mt-6 flex gap-3">
+          <a href="https://github.com/" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-teal-500" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://facebook.com/" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-blue-500" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://t.me/" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-sky-500" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://linkedin.com/" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-blue-600" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-black">Quick Links</h3>
+        <div class="mt-4 grid gap-2 text-slate-300"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+      </div>
+      <div>
+        <h3 class="font-black">Services</h3>
+        <div class="mt-4 grid gap-2 text-slate-300"><a href="#services">Web Design</a><a href="#services">Laravel</a><a href="#services">Database</a><a href="#services">UI/UX</a></div>
+      </div>
+    </div>
+    <div class="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span id="year"></span> VANN KUON. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="fixed bottom-6 right-6 z-40 hidden h-12 w-12 place-items-center rounded-full bg-teal-500 text-white shadow-glow transition hover:-translate-y-1" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div id="toast" class="fixed right-5 top-24 z-[80] hidden rounded-2xl bg-slate-950 px-5 py-4 font-bold text-white shadow-premium">
+    <i class="fa-solid fa-circle-check mr-2 text-teal-400"></i>
+    <span>Message sent successfully!</span>
+  </div>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 z-[75] hidden place-items-center bg-slate-950/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="glass max-h-[90vh] w-full max-w-3xl overflow-auto rounded-3xl p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[.25em] text-teal-500">Project Details</p>
+          <h3 id="modalTitle" class="mt-2 text-3xl font-black">Project</h3>
+        </div>
+        <button id="closeModal" class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 dark:border-white/10" aria-label="Close project modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mt-6 grid h-56 place-items-center rounded-3xl bg-gradient-to-br from-teal-500 via-slate-950 to-amber-500 text-white">
+        <i id="modalIcon" class="fa-solid fa-code text-6xl"></i>
+      </div>
+      <p id="modalDescription" class="mt-6 leading-8 text-slate-600 dark:text-slate-300"></p>
+      <div class="mt-5">
+        <h4 class="font-black">Main Features</h4>
+        <ul id="modalFeatures" class="mt-3 grid gap-2 text-sm text-slate-600 dark:text-slate-300"></ul>
+      </div>
+      <div id="modalTech" class="mt-5 flex flex-wrap gap-2"></div>
+      <div class="mt-7 flex flex-wrap gap-4">
+        <a href="#" class="btn-primary rounded-full px-5 py-3 font-bold">Live Demo</a>
+        <a href="#" class="btn-soft rounded-full px-5 py-3 font-bold"><i class="fa-brands fa-github mr-2"></i>Source Code</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basic project data powers the modal popup.
+    const projects = {
+      "Portfolio Website": {
+        icon: "fa-solid fa-id-card",
+        description: "A modern personal portfolio website with responsive layout, bilingual content, dark/light mode, section animations, filters, FAQ accordion, and contact validation.",
+        features: ["Sticky navigation", "Theme and language switchers", "Animated counters", "Project modal", "Validated contact form"],
+        tech: ["HTML", "Tailwind CSS", "JavaScript", "Font Awesome"],
+      },
+      "Student Management System": {
+        icon: "fa-solid fa-user-graduate",
+        description: "A dashboard-style school management concept for student records, classes, attendance, scores, and reports.",
+        features: ["Student CRUD", "Class management", "Attendance tracking", "Score reports", "Admin dashboard"],
+        tech: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+      },
+      "Online Shop Website": {
+        icon: "fa-solid fa-bag-shopping",
+        description: "An e-commerce learning project with product listing, shopping cart concept, checkout flow, and admin product management.",
+        features: ["Product catalog", "Cart UI", "Checkout concept", "Admin products", "Responsive store pages"],
+        tech: ["Laravel", "MySQL", "JavaScript", "Tailwind CSS"],
+      },
+      "Mobile App UI Design": {
+        icon: "fa-solid fa-mobile-screen-button",
+        description: "A clean mobile UI concept focused on authentication, dashboard, profile screens, settings, and simple app navigation.",
+        features: ["Login screens", "Dashboard UI", "Profile page", "Settings screen", "Prototype flow"],
+        tech: ["UI/UX", "Mobile Design", "Responsive Design"],
+      },
+      "Restaurant Ordering System": {
+        icon: "fa-solid fa-utensils",
+        description: "A restaurant ordering concept with menu management, table orders, kitchen status, and simple sales reporting.",
+        features: ["Menu dashboard", "Table orders", "Kitchen status", "Payment flow", "Daily report"],
+        tech: ["Laravel", "PHP", "MySQL", "POS Concept"],
+      },
+      "Inventory Management System": {
+        icon: "fa-solid fa-boxes-stacked",
+        description: "An inventory practice system for stock control, suppliers, product records, and low-stock dashboard alerts.",
+        features: ["Product records", "Stock in/out", "Supplier data", "Low stock alert", "Inventory reports"],
+        tech: ["PHP", "MySQL", "Database Design", "Bootstrap/Tailwind"],
+      },
+    };
+
+    const translations = {
+      en: {
+        navHome: "Home", navAbout: "About", navSkills: "Skills", navProjects: "Projects", navServices: "Services", navExperience: "Experience", navBlog: "Blog", navTestimonials: "Testimonials", navFaq: "FAQ", navContact: "Contact",
+        heroBadge: "Available for practice projects and freelance work",
+        heroHello: "Hi, I am",
+        heroIntro: "Passionate about Programming, Database, Networking, Web Development, and Mobile App Development.",
+        hireMe: "Hire Me", viewProjects: "View Projects", downloadCv: "Download CV",
+        aboutEyebrow: "About Me", aboutTitle: "Building skills through real projects.", aboutIntro: "I am an IT student learning programming, database systems, networking, web development, and mobile app concepts. ខ្ញុំចូលចិត្តបង្កើត UI/UX ទំនើប និង website ដែលស្អាត ប្រើងាយ និង responsive។",
+        journeyTitle: "Developer Journey", journeyText: "My journey started with curiosity about how websites work. Now I practice frontend, backend, database design, networking fundamentals, and mobile UI ideas to become a confident software developer.",
+        education: "Education", goals: "Goals", interests: "Interests",
+        statProjects: "Projects Completed", statTech: "Technologies Learned", statHours: "Practice Hours", statClients: "Happy Clients", statTeams: "Team Collaborations",
+        skillsEyebrow: "Skills", skillsTitle: "Tools I use to build clean digital products.",
+        projectsEyebrow: "Projects", projectsTitle: "A practical showcase of learning by building.",
+        servicesEyebrow: "Services", servicesTitle: "Helpful digital services for students and small businesses.",
+        experienceEyebrow: "Experience & Education", experienceTitle: "A timeline of learning, practice, and growth.",
+        featuredEyebrow: "Featured Project", testimonialsEyebrow: "Testimonials", testimonialsTitle: "Kind words from practice collaborators.",
+        blogEyebrow: "Blog", blogTitle: "Notes from the learning desk.", faqTitle: "Frequently asked questions.",
+        contactEyebrow: "Contact", contactTitle: "Let us build something useful.",
+      },
+      kh: {
+        navHome: "ទំព័រដើម", navAbout: "អំពីខ្ញុំ", navSkills: "ជំនាញ", navProjects: "គម្រោង", navServices: "សេវាកម្ម", navExperience: "បទពិសោធន៍", navBlog: "អត្ថបទ", navTestimonials: "មតិអ្នកប្រើ", navFaq: "សំណួរ", navContact: "ទំនាក់ទំនង",
+        heroBadge: "ទទួលធ្វើ project តូចៗ និង freelance practice",
+        heroHello: "សួស្តី ខ្ញុំគឺ",
+        heroIntro: "ខ្ញុំមានចំណាប់អារម្មណ៍លើ Programming, Database, Networking, Web Development និង Mobile App Development។",
+        hireMe: "ជួលខ្ញុំ", viewProjects: "មើលគម្រោង", downloadCv: "ទាញយក CV",
+        aboutEyebrow: "អំពីខ្ញុំ", aboutTitle: "រៀនជំនាញតាមរយៈការបង្កើតគម្រោងពិត។", aboutIntro: "ខ្ញុំជា IT Student កំពុងរៀន Programming, Database, Networking, Website Development និង Mobile App concepts។ I love creating clean modern UI/UX designs.",
+        journeyTitle: "ដំណើរជា Developer", journeyText: "ដំណើររបស់ខ្ញុំចាប់ផ្តើមពីការចង់ដឹងថា website ដំណើរការយ៉ាងដូចម្តេច។ ឥឡូវខ្ញុំអនុវត្ត frontend, backend, database, networking និង mobile UI។",
+        education: "ការសិក្សា", goals: "គោលដៅ", interests: "ចំណាប់អារម្មណ៍",
+        statProjects: "គម្រោងបានបញ្ចប់", statTech: "បច្ចេកវិទ្យាបានរៀន", statHours: "ម៉ោងអនុវត្ត", statClients: "អតិថិជនពេញចិត្ត", statTeams: "ការសហការក្រុម",
+        skillsEyebrow: "ជំនាញ", skillsTitle: "ឧបករណ៍ដែលខ្ញុំប្រើសម្រាប់បង្កើត digital products ស្អាតៗ។",
+        projectsEyebrow: "គម្រោង", projectsTitle: "បង្ហាញលទ្ធផលនៃការរៀនតាមរយៈការបង្កើត។",
+        servicesEyebrow: "សេវាកម្ម", servicesTitle: "សេវាឌីជីថលសម្រាប់សិស្ស និងអាជីវកម្មតូចៗ។",
+        experienceEyebrow: "បទពិសោធន៍ និងការសិក្សា", experienceTitle: "Timeline នៃការរៀន អនុវត្ត និងរីកចម្រើន។",
+        featuredEyebrow: "គម្រោងពិសេស", testimonialsEyebrow: "មតិអ្នកប្រើ", testimonialsTitle: "ពាក្យល្អៗពីអ្នកធ្លាប់សហការ។",
+        blogEyebrow: "អត្ថបទ", blogTitle: "កំណត់ចំណាំពីតុរៀន។", faqTitle: "សំណួរដែលសួរញឹកញាប់។",
+        contactEyebrow: "ទំនាក់ទំនង", contactTitle: "មកបង្កើតអ្វីដែលមានប្រយោជន៍ជាមួយគ្នា។",
+      },
+    };
+
+    const html = document.documentElement;
+    const loader = document.getElementById("loader");
+    const header = document.getElementById("header");
+    const themeToggle = document.getElementById("themeToggle");
+    const langToggle = document.getElementById("langToggle");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const backToTop = document.getElementById("backToTop");
+    const scrollProgress = document.getElementById("scrollProgress");
+
+    // Loading screen exits quickly after the page is ready.
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+        setTimeout(() => loader.remove(), 350);
+      }, 500);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme mode persists when storage is available, but still works from file previews.
+    const themeStorage = {
+      get() {
+        try {
+          return typeof window.localStorage !== "undefined" ? window.localStorage.getItem("theme") : null;
+        } catch (error) {
+          return null;
+        }
+      },
+      set(value) {
+        try {
+          if (typeof window.localStorage !== "undefined") window.localStorage.setItem("theme", value);
+        } catch (error) {
+          /* Storage can be blocked in local file previews; the visual toggle still works. */
+        }
+      },
+    };
+
+    const prefersDark = typeof window.matchMedia === "function" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = themeStorage.get();
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      html.classList.add("dark");
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      const dark = html.classList.contains("dark");
+      themeToggle.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      themeStorage.set(dark ? "dark" : "light");
+    });
+
+    // Accent color switcher.
+    document.querySelectorAll(".color-dot").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.documentElement.style.setProperty("--accent", button.dataset.color);
+        document.documentElement.style.setProperty("--accent-2", button.dataset.color2);
+        document.documentElement.style.setProperty("--accent-3", button.dataset.color3);
+      });
+    });
+
+    // Language switcher updates text nodes marked with data-i18n.
+    let currentLang = "en";
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "kh" : "en";
+      document.body.classList.toggle("lang-kh", currentLang === "kh");
+      langToggle.textContent = currentLang === "en" ? "ខ្មែរ" : "EN";
+      document.querySelectorAll("[data-i18n]").forEach((item) => {
+        const key = item.dataset.i18n;
+        item.textContent = translations[currentLang][key] || item.textContent;
+      });
+    });
+
+    // Mobile menu.
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      menuToggle.innerHTML = mobileMenu.classList.contains("hidden") ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+    });
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    // Typing animation.
+    const typingText = document.getElementById("typingText");
+    const words = ["Web Development", "Database Design", "Networking Basics", "Mobile App UI", "Laravel Learning", "Modern UI/UX"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    function typeLoop() {
+      const word = words[wordIndex];
+      typingText.textContent = isDeleting ? word.slice(0, charIndex--) : word.slice(0, charIndex++);
+      if (!isDeleting && charIndex > word.length + 8) isDeleting = true;
+      if (isDeleting && charIndex < 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+      setTimeout(typeLoop, isDeleting ? 55 : 90);
+    }
+    typeLoop();
+
+    // Scroll reveal, progress bar, sticky header, and active nav.
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const counter = entry.target;
+        const target = Number(counter.dataset.target);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 70));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = current;
+          }
+        }, 18);
+        observer.unobserve(counter);
+      });
+    }, { threshold: 0.7 });
+    document.querySelectorAll(".counter").forEach((counter) => counterObserver.observe(counter));
+
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const card = entry.target;
+        card.querySelector(".progress-fill").style.width = card.dataset.percent + "%";
+      });
+    }, { threshold: 0.45 });
+    document.querySelectorAll(".skill-card").forEach((card) => skillObserver.observe(card));
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+    function handleScroll() {
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+      header.classList.toggle("glass", scrollTop > 20);
+      backToTop.classList.toggle("hidden", scrollTop < 700);
+      backToTop.classList.toggle("grid", scrollTop >= 700);
+
+      let current = "home";
+      sections.forEach((section) => {
+        if (scrollTop >= section.offsetTop - 160) current = section.id;
+      });
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+      });
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // Skills filtering.
+    document.querySelectorAll(".skill-filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".skill-filter").forEach((btn) => btn.className = "skill-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15");
+        button.className = "skill-filter rounded-full bg-teal-500 px-4 py-2 text-sm font-bold text-white";
+        const filter = button.dataset.skillFilter;
+        document.querySelectorAll(".skill-card").forEach((card) => {
+          card.style.display = filter === "all" || card.dataset.category === filter ? "block" : "none";
+        });
+      });
+    });
+
+    // Project filtering.
+    document.querySelectorAll(".project-filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".project-filter").forEach((btn) => btn.className = "project-filter rounded-full border border-slate-300 px-4 py-2 text-sm font-bold dark:border-white/15");
+        button.className = "project-filter rounded-full bg-teal-500 px-4 py-2 text-sm font-bold text-white";
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.classList.toggle("hide", filter !== "all" && card.dataset.category !== filter);
+        });
+      });
+    });
+
+    // Project modal popup.
+    const modal = document.getElementById("projectModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalFeatures = document.getElementById("modalFeatures");
+    const modalTech = document.getElementById("modalTech");
+    document.querySelectorAll(".open-project").forEach((button) => {
+      button.addEventListener("click", () => {
+        const title = button.closest(".project-card").dataset.project;
+        const project = projects[title];
+        modalTitle.textContent = title;
+        modalIcon.className = `${project.icon} text-6xl`;
+        modalDescription.textContent = project.description;
+        modalFeatures.innerHTML = project.features.map((feature) => `<li><i class="fa-solid fa-check mr-2 text-teal-500"></i>${feature}</li>`).join("");
+        modalTech.innerHTML = project.tech.map((tech) => `<span class="rounded-full bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-600">${tech}</span>`).join("");
+        modal.classList.remove("hidden");
+        modal.classList.add("grid");
+        document.body.classList.add("modal-open");
+      });
+    });
+    function closeProjectModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("grid");
+      document.body.classList.remove("modal-open");
+    }
+    document.getElementById("closeModal").addEventListener("click", closeProjectModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeProjectModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.classList.contains("hidden")) closeProjectModal();
+    });
+
+    // FAQ accordion.
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("i");
+        answer.classList.toggle("hidden");
+        icon.classList.toggle("fa-plus");
+        icon.classList.toggle("fa-minus");
+      });
+    });
+
+    // Contact form validation with toast feedback.
+    const form = document.getElementById("contactForm");
+    const toast = document.getElementById("toast");
+    function setError(input, message) {
+      const error = input.parentElement.querySelector(".error");
+      error.textContent = message;
+      error.classList.remove("hidden");
+      input.classList.add("border-rose-400");
+    }
+    function clearError(input) {
+      const error = input.parentElement.querySelector(".error");
+      error.textContent = "";
+      error.classList.add("hidden");
+      input.classList.remove("border-rose-400");
+    }
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const fields = ["name", "email", "subject", "message"].map((id) => document.getElementById(id));
+      let valid = true;
+      fields.forEach((field) => {
+        clearError(field);
+        if (!field.value.trim()) {
+          setError(field, "This field is required.");
+          valid = false;
+        }
+      });
+      const email = document.getElementById("email");
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        setError(email, "Please enter a valid email address.");
+        valid = false;
+      }
+      if (!valid) return;
+      form.reset();
+      toast.classList.remove("hidden");
+      setTimeout(() => toast.classList.add("hidden"), 2800);
+    });
+  </script>
+</body>
+</html>

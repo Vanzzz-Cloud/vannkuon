@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV of VANN KUON, IT Student, Web Developer, and Mobile App Learner." />
+  <title>VANN KUON | CV</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314b8a6'/%3E%3Ctext x='12' y='42' font-size='28' font-family='Arial' font-weight='700' fill='white'%3EVK%3C/text%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    body {
+      background: #e8eef5;
+      color: #0f172a;
+      font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+    }
+
+    .sheet {
+      box-shadow: 0 24px 90px rgba(15, 23, 42, .16);
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .sheet {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print mx-auto flex max-w-5xl items-center justify-between px-4 py-5">
+    <a href="index.html" class="font-bold text-slate-700"><i class="fa-solid fa-arrow-left mr-2"></i>Back to Portfolio</a>
+    <button onclick="window.print()" class="rounded-full bg-teal-500 px-5 py-3 font-bold text-white shadow-lg shadow-teal-500/20">
+      <i class="fa-solid fa-print mr-2"></i>Print / Save PDF
+    </button>
+  </div>
+
+  <main class="sheet mx-auto mb-10 max-w-5xl overflow-hidden rounded-3xl bg-white">
+    <section class="grid gap-0 md:grid-cols-[.8fr_1.2fr]">
+      <aside class="bg-slate-950 p-8 text-white">
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/10">
+          <img src="Profile.jpg" alt="VANN KUON profile photo" class="h-72 w-full object-cover object-[72%_center]" />
+        </div>
+
+        <div class="mt-8">
+          <h1 class="text-4xl font-black leading-tight">VANN KUON</h1>
+          <p class="mt-3 text-teal-300">IT Student | Web Developer | Mobile App Learner</p>
+        </div>
+
+        <div class="mt-8 space-y-4 text-sm text-slate-200">
+          <p><i class="fa-solid fa-envelope mr-3 text-teal-300"></i>vannkuon@example.com</p>
+          <p><i class="fa-solid fa-location-dot mr-3 text-teal-300"></i>Cambodia</p>
+          <p><i class="fa-brands fa-telegram mr-3 text-teal-300"></i>@vannkuon</p>
+          <p><i class="fa-brands fa-github mr-3 text-teal-300"></i>github.com/vannkuon</p>
+        </div>
+
+        <div class="mt-9">
+          <h2 class="border-b border-white/15 pb-2 text-sm font-black uppercase tracking-[.25em] text-teal-300">Skills</h2>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+            <span class="rounded-full bg-white/10 px-3 py-2">HTML</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">CSS</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">Tailwind CSS</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">JavaScript</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">PHP</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">Laravel</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">MySQL</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">Git/GitHub</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">Networking</span>
+            <span class="rounded-full bg-white/10 px-3 py-2">UI/UX Design</span>
+          </div>
+        </div>
+
+        <div class="mt-9">
+          <h2 class="border-b border-white/15 pb-2 text-sm font-black uppercase tracking-[.25em] text-teal-300">Languages</h2>
+          <div class="mt-4 space-y-3 text-sm text-slate-200">
+            <p>Khmer: Native</p>
+            <p>English: Learning / Communication</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="p-8">
+        <section>
+          <p class="text-sm font-black uppercase tracking-[.25em] text-teal-600">Profile</p>
+          <p class="mt-4 leading-8 text-slate-600">
+            I am an IT student passionate about programming, database systems, networking, web development, and mobile app development. ខ្ញុំចូលចិត្តរៀនបច្ចេកវិទ្យា និងបង្កើត website ដែលស្អាត ប្រើងាយ និង responsive។
+          </p>
+        </section>
+
+        <section class="mt-9">
+          <h2 class="text-2xl font-black">Education</h2>
+          <div class="mt-4 rounded-2xl border border-slate-200 p-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <h3 class="font-black">IT Student</h3>
+              <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700">Current</span>
+            </div>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Studying programming, database, networking, web development, and software development fundamentals.</p>
+          </div>
+        </section>
+
+        <section class="mt-9">
+          <h2 class="text-2xl font-black">Technical Strengths</h2>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <h3 class="font-black text-teal-700">Frontend</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">HTML, CSS, Tailwind CSS, JavaScript, responsive layouts, modern UI components.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <h3 class="font-black text-teal-700">Backend</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">PHP, Laravel basics, CRUD systems, forms, authentication concepts.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <h3 class="font-black text-teal-700">Database</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">MySQL tables, relationships, queries, database design, and reports.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <h3 class="font-black text-teal-700">Other</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Git/GitHub, networking fundamentals, UI/UX design, mobile app UI concepts.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-9">
+          <h2 class="text-2xl font-black">Project Experience</h2>
+          <div class="mt-4 space-y-4">
+            <article class="rounded-2xl border border-slate-200 p-5">
+              <h3 class="font-black">Portfolio Website</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Built a modern responsive personal portfolio with dark mode, animations, project filtering, FAQ accordion, and contact validation.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">HTML · Tailwind CSS · JavaScript</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 p-5">
+              <h3 class="font-black">Student Management System</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Practiced a CRUD-style system for student records, classes, attendance, scores, and dashboard reporting.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">PHP · Laravel · MySQL</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 p-5">
+              <h3 class="font-black">Online Shop Website</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Designed product cards, cart flow, checkout concept, and admin product management pages.</p>
+              <p class="mt-2 text-xs font-bold text-teal-700">Laravel · MySQL · UI/UX</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mt-9">
+          <h2 class="text-2xl font-black">Career Goal</h2>
+          <p class="mt-4 rounded-2xl bg-teal-50 p-5 leading-8 text-slate-700">
+            My goal is to become a confident full-stack developer who can build useful websites, business systems, database-driven applications, and mobile-friendly digital products.
+          </p>
+        </section>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
